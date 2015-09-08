@@ -1,6 +1,7 @@
 Silex Finder Provider
 ===============
 
+[![Build Status](https://travis-ci.org/nachonerd/silex_finder_provider.svg?branch=master)](https://travis-ci.org/nachonerd/silex_finder_provider)
 [![Minimum PHP Version](https://img.shields.io/badge/php-%3E%3D%205.4-8892BF.svg?style=flat-square)](https://php.net/)
 
 ### License
