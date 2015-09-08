@@ -1,9 +1,9 @@
 {
-    "name": "nachonerd/silex_finder_provider",
-    "description": "Silex Service Provider and Wrapper Symfony Finder",
-    "type": "Library",
+    "name": "nachonerd/silex-finder-provider",
+    "description": "Silex Service Provider to Wrapper Symfony Finder",
+    "type": "library",
     "version": "1.0.0",
-    "keywords": ["PHP", "Silex", "Provider", "Finder"],
+    "keywords": ["PHP", "Silex", "Service", "Provider", "ServiceProvider", "Finder"],
     "license": "GNU GPL v3",
     "autoload": {
         "psr-4": {"NachoNerd\\Silex\\Finder\\": "src/"}
@@ -11,7 +11,9 @@
     "authors": [
         {
             "name": "Ignacio Rodrigo Galieri",
-            "email": "irgalieri@gmail.com"
+            "email": "irgalieri@gmail.com",
+            "homepage": "http://elnachonerd.com",
+            "role": "Developer"
         }
     ],
     "support": {
