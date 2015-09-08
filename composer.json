@@ -1,6 +1,6 @@
 {
     "name": "nachonerd/silex-finder-provider",
-    "description": "Silex Service Provider to Wrapper Symfony Finder",
+    "description": "This is a Silex service provider and a wrapper of Symfony finder",
     "type": "library",
     "version": "1.0.2",
     "keywords": ["PHP", "Silex", "Service", "Provider", "ServiceProvider", "Finder"],
