@@ -1,7 +1,6 @@
 Silex Finder Provider
 ===============
-
-[![Build Status](https://travis-ci.org/nachonerd/silex_finder_provider.svg?branch=master)](https://travis-ci.org/nachonerd/silex_finder_provider) [![Code Climate](https://codeclimate.com/github/nachonerd/silex_finder_provider/badges/gpa.svg)](https://codeclimate.com/github/nachonerd/silex_finder_provider) [![Test Coverage](https://codeclimate.com/github/nachonerd/silex_finder_provider/badges/coverage.svg)](https://codeclimate.com/github/nachonerd/silex_finder_provider/coverage)
+[![Latest Stable Version](https://poser.pugx.org/nachonerd/silex-finder-provider/v/stable)](https://packagist.org/packages/nachonerd/silex-finder-provider) [![Total Downloads](https://poser.pugx.org/nachonerd/silex-finder-provider/downloads)](https://packagist.org/packages/nachonerd/silex-finder-provider) [![Latest Unstable Version](https://poser.pugx.org/nachonerd/silex-finder-provider/v/unstable)](https://packagist.org/packages/nachonerd/silex-finder-provider) [![License](https://poser.pugx.org/nachonerd/silex-finder-provider/license)](https://packagist.org/packages/nachonerd/silex-finder-provider) [![Build Status](https://travis-ci.org/nachonerd/silex_finder_provider.svg?branch=master)](https://travis-ci.org/nachonerd/silex_finder_provider) [![Code Climate](https://codeclimate.com/github/nachonerd/silex_finder_provider/badges/gpa.svg)](https://codeclimate.com/github/nachonerd/silex_finder_provider) [![Test Coverage](https://codeclimate.com/github/nachonerd/silex_finder_provider/badges/coverage.svg)](https://codeclimate.com/github/nachonerd/silex_finder_provider/coverage)
 [![Minimum PHP Version](https://img.shields.io/badge/php-%3E%3D%205.4-8892BF.svg?style=flat-square)](https://php.net/)
 
 ### License
