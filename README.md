@@ -17,7 +17,7 @@ GNU GPL v3
 ### Install
 
 ```
-composer require nachonerd/silex_finder_provider
+composer require nachonerd/silex-finder-provider
 ```
 
 ### Usage
