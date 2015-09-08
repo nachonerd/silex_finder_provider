@@ -31,7 +31,7 @@ namespace NachoNerd\Silex\Finder;
 
 use Silex\Application;
 use Silex\ServiceProviderInterface;
-use Symfony\Component\Finder\Finder;
+use NachoNerd\Silex\Finder\Extensions\Finder;
 
 
 /**

@@ -36,7 +36,7 @@
  * @license   GNU GPL v3
  * @link      https://github.com/nachonerd/markdownblog
  */
-class ProviderTest extends \PHPUnit_Framework_TestCase
+class Integrator extends \PHPUnit_Framework_TestCase
 {
     /**
      * Sets up the fixture. This method is called before a test is executed.
@@ -57,50 +57,68 @@ class ProviderTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * Test Instance Of Provider
+     * ProviderTestUmpteenth
      *
-     * @return void
+     * @return array
      */
-    public function testInstanceOfProvider()
+    public function providerTestUmpteenth()
     {
-        $this->assertInstanceOf(
-            'Silex\ServiceProviderInterface',
-            new NachoNerd\Silex\Finder\Provider()
+        return array(
+            array(""),
+            array(null),
+            array("a"),
+            array(1),
+            array(2),
+            array(4),
+            array(5),
+            array(10)
         );
     }
 
     /**
      * Test Register Finder
      *
-     * @return void
-     */
-    public function testRegisterFinder()
-    {
-
-        $app = new Silex\Application();
-        $app->register(new \NachoNerd\Silex\Finder\Provider());
-
-        $this->assertInstanceOf(
-            'NachoNerd\Silex\Finder\Extensions\Finder',
-            $app['nn.finder']
-        );
-    }
-
-    /**
-     * Test Boot Finder
+     * @param integer $n Umpteenth Number
      *
      * @return void
+     *
+     * @dataProvider providerTestUmpteenth
      */
-    public function testBootFinder()
+    public function testIntegratorSuccess($n)
     {
-
+        $path = realpath(__DIR__."/../resources/")."/";
+        $oldFinder = new Symfony\Component\Finder\Finder();
         $app = new Silex\Application();
         $app->register(new \NachoNerd\Silex\Finder\Provider());
         $app->boot();
 
-        $this->assertInstanceOf(
-            'NachoNerd\Silex\Finder\Extensions\Finder',
-            $app['nn.finder']
+        $app['nn.finder']->sortByModifiedTimeDesc()->in($path);
+        $newFinder = $app['nn.finder']->getNFirst($n);
+
+        $filesNewWay = array();
+        foreach ($newFinder as $files) {
+            $filesNewWay[] = $files;
+        }
+
+        $oldFinder->sort(
+            function ($a, $b) {
+                return ($b->getMTime() - $a->getMTime());
+            }
+        )->in($path);
+
+        $filesOldWay = array();
+        $j = 0;
+        foreach ($oldFinder as $files) {
+            if ($j == $n) {
+                break;
+            }
+            $j++;
+            $filesOldWay[] = $files;
+        }
+
+        $this->assertEquals(
+            $filesOldWay,
+            $filesNewWay
         );
     }
 }

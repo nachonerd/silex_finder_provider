@@ -57,3 +57,157 @@ Now you have access to instance of finder throw $app['nn.finder'].
     }
     ...
 ```
+
+### What new in version __1.1.0__ ?
+
+#### I Add New Sort Desc methods
+
+The methods sort in the original finder are ASC. I add DESC sort method.
+
+- sortByModifiedTimeDesc
+
+```php
+<?php
+    require_once __DIR__.'/../vendor/autoload.php';
+
+    $app = new Silex\Application();
+
+    // Considering the config.yml files is in the same directory as index.php
+    $app->register(new \NachoNerd\Silex\Finder\Provider());
+
+    ...
+    $finder = $app["nn.finder"];
+    $finder->files()->sortByModifiedTimeDesc()->in(__DIR__);
+    foreach ($finder as $file) {
+        // Dump the absolute path
+        var_dump($file->getRealpath());
+    }
+    ...
+```
+
+- sortByChangedTimeDesc
+
+```php
+<?php
+    require_once __DIR__.'/../vendor/autoload.php';
+
+    $app = new Silex\Application();
+
+    // Considering the config.yml files is in the same directory as index.php
+    $app->register(new \NachoNerd\Silex\Finder\Provider());
+
+    ...
+    $finder = $app["nn.finder"];
+    $finder->files()->sortByChangedTimeDesc()->in(__DIR__);
+    foreach ($finder as $file) {
+        // Dump the absolute path
+        var_dump($file->getRealpath());
+    }
+    ...
+```
+
+- sortByAccessedTimeDesc
+
+```php
+<?php
+    require_once __DIR__.'/../vendor/autoload.php';
+
+    $app = new Silex\Application();
+
+    // Considering the config.yml files is in the same directory as index.php
+    $app->register(new \NachoNerd\Silex\Finder\Provider());
+
+    ...
+    $finder = $app["nn.finder"];
+    $finder->files()->sortByAccessedTimeDesc()->in(__DIR__);
+    foreach ($finder as $file) {
+        // Dump the absolute path
+        var_dump($file->getRealpath());
+    }
+    ...
+```
+
+- sortByTypeDesc
+
+```php
+<?php
+    require_once __DIR__.'/../vendor/autoload.php';
+
+    $app = new Silex\Application();
+
+    // Considering the config.yml files is in the same directory as index.php
+    $app->register(new \NachoNerd\Silex\Finder\Provider());
+
+    ...
+    $finder = $app["nn.finder"];
+    $finder->files()->sortByTypeDesc()->in(__DIR__);
+    foreach ($finder as $file) {
+        // Dump the absolute path
+        var_dump($file->getRealpath());
+    }
+    ...
+```
+
+- sortByNameDesc
+
+```php
+<?php
+    require_once __DIR__.'/../vendor/autoload.php';
+
+    $app = new Silex\Application();
+
+    // Considering the config.yml files is in the same directory as index.php
+    $app->register(new \NachoNerd\Silex\Finder\Provider());
+
+    ...
+    $finder = $app["nn.finder"];
+    $finder->files()->sortByNameDesc()->in(__DIR__);
+    foreach ($finder as $file) {
+        // Dump the absolute path
+        var_dump($file->getRealpath());
+    }
+    ...
+```
+#### I Add Get N First Files or Dirs
+Now you can get the n first files or dirs. And if you this new method combine
+with de sort desc new methods you can get last first files or dirs.
+
+```php
+<?php
+    require_once __DIR__.'/../vendor/autoload.php';
+
+    $app = new Silex\Application();
+
+    // Considering the config.yml files is in the same directory as index.php
+    $app->register(new \NachoNerd\Silex\Finder\Provider());
+
+    ...
+    $finder = $app["nn.finder"];
+    $finder->files()->sortByChangedTimeDesc()->in(__DIR__);
+    $finder = $finder->getNFirst(10);
+    foreach ($finder as $file) {
+        // Dump the absolute path
+        var_dump($file->getRealpath());
+    }
+    ...
+```
+
+```php
+<?php
+    require_once __DIR__.'/../vendor/autoload.php';
+
+    $app = new Silex\Application();
+
+    // Considering the config.yml files is in the same directory as index.php
+    $app->register(new \NachoNerd\Silex\Finder\Provider());
+
+    ...
+    $finder = $app["nn.finder"];
+    $finder->files()->in(__DIR__);
+    $finder = $finder->getNFirst(10);
+    foreach ($finder as $file) {
+        // Dump the absolute path
+        var_dump($file->getRealpath());
+    }
+    ...
+```
