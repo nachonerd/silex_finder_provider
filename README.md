@@ -169,8 +169,8 @@ The methods sort in the original finder are ASC. I add DESC sort method.
     ...
 ```
 #### I Add Get N First Files or Dirs
-Now you can get the n first files or dirs. And if you this new method combine
-with de sort desc new methods you can get last first files or dirs.
+Now you can get the n first files or dirs. And if you combine this new method
+with the sort desc new methods you can get last first files or dirs.
 
 ```php
 <?php
