@@ -4,7 +4,7 @@ Silex Finder Provider
 [![Minimum PHP Version](https://img.shields.io/badge/php-%3E%3D%205.4-8892BF.svg?style=flat-square)](https://php.net/)
 
 ### License
-GNU GPL v3
+GPL-3.0
 
 ### Requirements
 - [PHP version 5.4](http://php.net/releases/5_4_0.php)

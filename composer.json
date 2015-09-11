@@ -2,7 +2,6 @@
     "name": "nachonerd/silex-finder-provider",
     "description": "This is a Silex service provider and a wrapper of Symfony finder",
     "type": "library",
-    "version": "1.1.0",
     "keywords": ["PHP", "Silex", "Service", "Provider", "ServiceProvider", "Finder", "Sort Desc"],
     "license": "GPL-3.0",
     "autoload": {
