@@ -29,6 +29,7 @@
 namespace NachoNerd\Silex\Finder\Extensions;
 
 use Symfony\Component\Finder\Finder as FinderBase;
+use Symfony\Component\Finder\SplFileInfo;
 
 /**
  * Provider Class
@@ -57,7 +58,7 @@ class Finder extends FinderBase
     public function sortByNameDesc()
     {
         $this->sort(
-            function ($a, $b) {
+            function (SplFileInfo $a, SplFileInfo $b) {
                 return strcmp($b->getRealpath(), $a->getRealpath());
             }
         );
@@ -80,7 +81,7 @@ class Finder extends FinderBase
     public function sortByTypeDesc()
     {
         $this->sort(
-            function ($a, $b) {
+            function (SplFileInfo $a, SplFileInfo $b) {
                 if ($a->isDir() && $b->isFile()) {
                     return 1;
                 } elseif ($a->isFile() && $b->isDir()) {
@@ -110,7 +111,7 @@ class Finder extends FinderBase
     public function sortByAccessedTimeDesc()
     {
         $this->sort(
-            function ($a, $b) {
+            function (SplFileInfo $a, SplFileInfo $b) {
                 return ($b->getATime() - $a->getATime());
             }
         );
@@ -138,7 +139,7 @@ class Finder extends FinderBase
     public function sortByChangedTimeDesc()
     {
         $this->sort(
-            function ($a, $b) {
+            function (SplFileInfo $a, SplFileInfo $b) {
                 return ($b->getCTime() - $a->getCTime());
             }
         );
@@ -163,7 +164,7 @@ class Finder extends FinderBase
     public function sortByModifiedTimeDesc()
     {
         $this->sort(
-            function ($a, $b) {
+            function (SplFileInfo $a, SplFileInfo $b) {
                 return ($b->getMTime() - $a->getMTime());
             }
         );

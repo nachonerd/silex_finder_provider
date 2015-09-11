@@ -57,7 +57,7 @@ class Provider implements ServiceProviderInterface
     public function register(Application $app)
     {
         $app['nn.finder'] = $app->share(
-            function () use ($app) {
+            function () {
                 return new Finder();
             }
         );
